@@ -57,21 +57,52 @@
                 <i class="fa-solid fa-exclamation"></i>
                 <small>Error Message</small>
             </div>
-            <div class="form-control">
-                <label>Gender</label>
-                <input type="radio" name="" id="male" value="Male">
-                <label for="male">Male</label>
-                <input type="radio" name="" id="female" value="Female">
-                <label for="male">Female</label>
-                <input type="radio" name="" id="notsay" value="Notsay">
-                <label for="notsay">Rather Not Say</label>
-                <i class="fa-solid fa-check"></i>
-                <i class="fa-solid fa-exclamation"></i>
-                <small>Error Message</small>
-            </div>
+            <!-- <label id="gender">Gender</label>
+            <div class="form-control" id="radio">
+                <div class="male">
+                    <input type="radio" name="" id="male" value="Male">
+                    <label for="male">Male</label>
+                </div>
+                <div class="male">
+                    <input type="radio" name="" id="female" value="Female">
+                    <label for="male">Female</label>
+                    <small>Error Message</small>
+                </div>
+            </div> -->
             <input type="submit" name="" value="Submit" id="btn">
         </form>
     </div>
+    <script type="text/javascript">
+        const form = document.getElementById('form')
+        const username = document.getElementById('username')
+        const email = document.getElementById('email')
+        const phone = document.getElementById('phone')
+        const password = document.getElementById('password')
+        const cpassword = document.getElementById('cnfmpass')
+        //add event
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            validate();
+        })
+        //validate functions
+        const validate = () => {
+            const username = username.value.trim();
+            const email = email.value.trim();
+            const phone = phone.value.trim();
+            const password = password.value.trim();
+            const cpassword = cnfmpass.value.trim();
+            //validate username
+            if (username === "") {
+                setErrormsg(username, "username can't be blank");
+            }
+            else if (username.length <= 2) {
+                setErrormsg(username, "Username min of 3 char")
+            }
+            else {
+                setSuccessMsg(username);
+            }
+        }
+    </script>
 </body>
 
 </html>

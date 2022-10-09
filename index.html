@@ -21,7 +21,7 @@
             <small class="tagline">Welcome to <span class="accord">ACCORD</span></small>
             <small class="tagline">"Your Place to Talk"</small>
         </header>
-        <form class="form" id="form">
+        <form class="form" id="form" action="">
             <div class="form-control">
                 <label>Name</label>
                 <input type="text" name="" id="name" placeholder="Enter your full name">
@@ -31,7 +31,7 @@
             </div>
             <div class="form-control">
                 <label>Phone Number</label>
-                <input type="number" name="" id="phnmb" placeholder="Enter your full name">
+                <input type="number" name="" id="phnmb" placeholder="Enter your mobile number">
                 <i class="fa-solid fa-check"></i>
                 <i class="fa-solid fa-exclamation"></i>
                 <small>Error Message</small>
@@ -74,9 +74,9 @@
     </div>
     <script type="text/javascript">
         const form = document.getElementById('form')
-        const username = document.getElementById('username')
+        const username = document.getElementById('name')
+        const phone = document.getElementById('phnmb')
         const email = document.getElementById('email')
-        const phone = document.getElementById('phone')
         const password = document.getElementById('password')
         const cpassword = document.getElementById('cnfmpass')
         //add event
@@ -84,24 +84,79 @@
             event.preventDefault();
             validate();
         })
+
         //validate functions
         const validate = () => {
-            const username = username.value.trim();
-            const email = email.value.trim();
-            const phone = phone.value.trim();
-            const password = password.value.trim();
-            const cpassword = cnfmpass.value.trim();
-            //validate username
-            if (username === "") {
-                setErrormsg(username, "username can't be blank");
+            //values
+            const usernameVal = username.value.trim();
+            const phoneVal = phone.value.trim();
+            const emailVal = email.value.trim();
+            const passwordVal = password.value.trim();
+            const cpasswordVal = cpassword.value.trim();
+            //SUcess Message
+            const successMsg = () => {
+                let frmCon = document.getElementsByClassName('form-control');
+                for ();
             }
-            else if (username.length <= 2) {
-                setErrormsg(username, "Username min of 3 char")
+            //username
+            if (usernameVal === "") {
+                setErrorMsg(username, "username can't be blank");
+            } else if (usernameVal.length < 5) {
+                setErrorMsg(username, "username min 5 characters");
             }
             else {
-                setSuccessMsg(username);
+                setSuccesMsg(username);
             }
+            //phone
+            if (phoneVal === "") {
+                setErrorMsg(phone, "phone number can't be blank");
+            } else if (phoneVal.length != 10) {
+                alert
+                setErrorMsg(phone, "phone number should be of 10 digits");
+            }
+            else {
+                setSuccesMsg(phone);
+            }
+            //email
+            if (emailVal === "") {
+                setErrorMsg(email, "Email can't be blank");
+            } else {
+                setSuccesMsg(email);
+            }
+            //Validate password
+            if (passwordVal === "") {
+                setErrorMsg(password, "Can't be blank");
+            } else if (password.length <= 8) {
+                setErrorMsg(password, "password must have more than 8 char");
+            }
+            else {
+                setSuccesMsg(password);
+            }
+            //Confirm Password
+            if (cpasswordVal === "") {
+                setErrorMsg(cpassword, "Can't be blank")
+            }
+            else if (cpasswordVal === passwordVal) {
+                setSuccesMsg(cpassword);
+            }
+            else {
+                setErrorMsg(cpassword, "Doesn't match")
+            }
+            successMsg();
         }
+
+        //function  
+        function setErrorMsg(input, errormsgs) {
+            const formControl = input.parentElement;
+            const small = formControl.querySelector('small');
+            formControl.className = "form-control error";
+            small.innerHTML = errormsgs;
+        }
+        function setSuccesMsg(input) {
+            const formControl = input.parentElement;
+            formControl.className = "form-control success";
+        }
+
     </script>
 </body>
 

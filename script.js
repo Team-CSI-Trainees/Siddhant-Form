@@ -17,7 +17,10 @@ const validate = () => {
     const emailVal = email.value.trim();
     const passwordVal = password.value.trim();
     const cpasswordVal = cpassword.value.trim();
-
+    var flag1;
+    var flag2;
+    var flag3;
+    var flag4;
 
     // REGEX //
     var userCheck = /^[A-Za-z. ]{3,25}$/;
@@ -28,6 +31,8 @@ const validate = () => {
     // username //
     if (userCheck.test(usernameVal)) {
         setSuccesMsg(username);
+        flag1 = 1;
+        //console.log(usernameVal);
     }
     else {
         setErrorMsg(username, "Invalid Username");
@@ -36,6 +41,8 @@ const validate = () => {
     // number //
     if (phoneCheck.test(phoneVal)) {
         setSuccesMsg(phone);
+        flag2 = 2;
+        //console.log(phoneVal);
     }
     else {
         setErrorMsg(phone, "Invalid Phonenumber");
@@ -43,6 +50,8 @@ const validate = () => {
     // email //
     if (emailCheck.test(emailVal)) {
         setSuccesMsg(email);
+        flag3 = 3;
+        //console.log(emailVal);
     }
     else {
         setErrorMsg(email, "Invalid Email");
@@ -53,6 +62,8 @@ const validate = () => {
         if (passwordVal === cpasswordVal) {
             setSuccesMsg(cpassword);
             setSuccesMsg(password);
+            flag4 = 4;
+            //console.log(passwordVal);
         }
         else {
             setErrorMsg(cpassword, "Doesn't Match");
@@ -61,6 +72,12 @@ const validate = () => {
     }
     else {
         setErrorMsg(password, "Invalid Password");
+    }
+    if (flag1 === 1 && flag2 === 2 && flag3 === 3 && flag4 === 4) {
+        console.log(usernameVal);
+        console.log(phoneVal);
+        console.log(emailVal);
+        console.log(passwordVal);
     }
 }
 //function  

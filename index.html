@@ -21,7 +21,7 @@
             <small class="tagline">Welcome to <span class="accord">ACCORD</span></small>
             <small class="tagline">"Your Place to Talk"</small>
         </header>
-        <form class="form" id="form" onsubmit="validate()">
+        <form class="form" id="form">
             <div class="form-control">
                 <label>Name</label>
                 <input type="text" name="" id="name" placeholder="Enter your full name">
@@ -57,14 +57,14 @@
                 <i class="fa-solid fa-exclamation"></i>
                 <small>Error Message</small>
             </div>
-            <!-- <label id="gender">Gender</label> -->
-            <!-- <div class="form-control" id="radio">
+            <!-- <label id="gender">Gender</label>
+            <div class="form-control" id="radio">
                 <div class="male">
-                    <input type="radio" name="gender1" id="male" value="Male" required>
+                    <input type="radio" name="" id="male" value="Male">
                     <label for="male">Male</label>
                 </div>
                 <div class="male">
-                    <input type="radio" name="gender1" id="female" value="Female" required>
+                    <input type="radio" name="" id="female" value="Female">
                     <label for="male">Female</label>
                     <small>Error Message</small>
                 </div>
@@ -74,6 +74,18 @@
     </div>
     <script src="script.js">
     </script>
+    <!-- <script type="text/javascript">
+        function validate() {
+            var username = document.getElementById('name');
+            alert(username);
+            var number = document.getElementById('phnmb').value;
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+            var cpassword = document.getElementById('cnfmpass').value;
+
+
+        }
+    </script> -->
 </body>
 
 </html>

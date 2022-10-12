@@ -74,14 +74,25 @@ header {
     margin-bottom: 5px;
 }
 
-#gender {
+/* #gender {
     display: block;
-}
-
+} */
+/* 
 input[type="radio"] {
     display: inline-block;
     top: 5%;
     left: 5%;
+} */
+
+#male {
+    position: absolute;
+    top: 8px;
+}
+
+
+#female {
+    position: absolute;
+    bottom: 8px;
 }
 
 .form-control input {

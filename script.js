@@ -4,6 +4,8 @@ const phone = document.getElementById('phnmb');
 const email = document.getElementById('email');
 const password = document.getElementById('password');
 const cpassword = document.getElementById('cnfmpass');
+const male = document.getElementById('male');
+const female = document.getElementById('female');
 
 form.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -11,15 +13,19 @@ form.addEventListener('submit', (event) => {
 })
 
 const validate = () => {
-    const usernameVal = username.value.trim();
-    const phoneVal = phone.value.trim();
-    const emailVal = email.value.trim();
-    const passwordVal = password.value.trim();
-    const cpasswordVal = cpassword.value.trim();
+    const usernameVal = username.value;
+    const phoneVal = phone.value;
+    const emailVal = email.value;
+    const passwordVal = password.value;
+    const cpasswordVal = cpassword.value;
+    // const maleVal = male.value;
+    // const femaleVal = female.value;
     var flag1;
     var flag2;
     var flag3;
     var flag4;
+    var flag5;
+    var flag6;
 
     // REGEX //
     var userCheck = /^[A-Za-z. ]{3,25}$/;
@@ -53,6 +59,11 @@ const validate = () => {
     else {
         setErrorMsg(email, "Invalid Email");
     }
+    // gender //
+    if (male.checked == true) {
+        flag5 = 5;
+    }
+    else flag6 = 6;
     // password //
     if (passwordCheck.test(passwordVal)) {
 
@@ -74,6 +85,12 @@ const validate = () => {
         console.log(phoneVal);
         console.log(emailVal);
         console.log(passwordVal);
+        if (flag5 == 5) {
+            console.log('male');
+        }
+        else if (flag6 == 6) {
+            console.log('female');
+        }
     }
 }
 //function  

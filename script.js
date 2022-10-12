@@ -1,16 +1,11 @@
-const form = document.getElementById('form');
-const username = document.getElementById('name');
-const phone = document.getElementById('phnmb');
-const email = document.getElementById('email');
-const password = document.getElementById('password');
-const cpassword = document.getElementById('cnfmpass');
+function validate() {
+    preventDefault();
 
-form.addEventListener('submit', (event) => {
-    event.preventDefault();
-    validate();
-})
-
-const validate = () => {
+    const username = document.getElementById('name');
+    const phone = document.getElementById('phnmb');
+    const email = document.getElementById('email');
+    const password = document.getElementById('password');
+    const cpassword = document.getElementById('cnfmpass');
     //    const form = document.getElementById('form').value;
     const usernameVal = username.value.trim();
     const phoneVal = phone.value.trim();

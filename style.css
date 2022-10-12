@@ -84,13 +84,6 @@ input[type="radio"] {
     left: 5%;
 }
 
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-}
-
 .form-control input {
     width: 100%;
     border: 2px solid #f0f0f0;
@@ -137,7 +130,6 @@ input[type=number]::-webkit-outer-spin-button {
     position: absolute;
     visibility: hidden;
     bottom: -22%;
-    /* left: 4.5%; */
 }
 
 .form-control.error small {

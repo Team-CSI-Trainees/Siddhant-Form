@@ -11,7 +11,6 @@ form.addEventListener('submit', (event) => {
 })
 
 const validate = () => {
-    //    const form = document.getElementById('form').value;
     const usernameVal = username.value.trim();
     const phoneVal = phone.value.trim();
     const emailVal = email.value.trim();
@@ -32,7 +31,6 @@ const validate = () => {
     if (userCheck.test(usernameVal)) {
         setSuccesMsg(username);
         flag1 = 1;
-        //console.log(usernameVal);
     }
     else {
         setErrorMsg(username, "Invalid Username");
@@ -42,7 +40,6 @@ const validate = () => {
     if (phoneCheck.test(phoneVal)) {
         setSuccesMsg(phone);
         flag2 = 2;
-        //console.log(phoneVal);
     }
     else {
         setErrorMsg(phone, "Invalid Phonenumber");
@@ -51,7 +48,7 @@ const validate = () => {
     if (emailCheck.test(emailVal)) {
         setSuccesMsg(email);
         flag3 = 3;
-        //console.log(emailVal);
+
     }
     else {
         setErrorMsg(email, "Invalid Email");
@@ -63,7 +60,6 @@ const validate = () => {
             setSuccesMsg(cpassword);
             setSuccesMsg(password);
             flag4 = 4;
-            //console.log(passwordVal);
         }
         else {
             setErrorMsg(cpassword, "Doesn't Match");

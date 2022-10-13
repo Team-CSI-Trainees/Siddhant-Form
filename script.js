@@ -11,27 +11,29 @@ form.addEventListener('submit', (event) => {
     event.preventDefault();
     validate();
 })
-
+// RESET //
+function resetPage() {
+    window.location.reload();
+}
+// function validate(){}
 const validate = () => {
     const usernameVal = username.value;
     const phoneVal = phone.value;
     const emailVal = email.value;
     const passwordVal = password.value;
     const cpasswordVal = cpassword.value;
-    // const maleVal = male.value;
-    // const femaleVal = female.value;
-    var flag1;
-    var flag2;
-    var flag3;
-    var flag4;
-    var flag5;
-    var flag6;
+    let flag2;
+    let flag3;
+    let flag4;
+    let flag1;
+    let flag5;
+    let flag6;
 
     // REGEX //
-    var userCheck = /^[A-Za-z. ]{3,25}$/;
-    var passwordCheck = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,18}$/;
-    var emailCheck = /^[a-zA-Z0-9_.]{3,}[@][a-zA-Z]{3,}[.]{1}[A-Za-z.]{2,8}$/;
-    var phoneCheck = /^[0-9]{10}$/;
+    let userCheck = /^[A-Za-z. ]{3,25}$/;
+    let passwordCheck = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,18}$/;
+    let emailCheck = /^[a-zA-Z0-9_.]{3,}[@][a-zA-Z]{3,}[.]{1}[A-Za-z.]{2,8}$/;
+    let phoneCheck = /^[0-9]{10}$/;
 
     // username //
     if (userCheck.test(usernameVal)) {
@@ -81,7 +83,7 @@ const validate = () => {
         setErrorMsg(password, "Invalid Password");
     }
     if (flag1 === 1 && flag2 === 2 && flag3 === 3 && flag4 === 4) {
-        console.log(usernameVal);
+        console.log(usernameVal.trim());
         console.log(phoneVal);
         console.log(emailVal);
         console.log(passwordVal);
